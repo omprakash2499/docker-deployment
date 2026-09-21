@@ -4,8 +4,8 @@ An original incident API packaged for repeatable local and AWS deployment.
 It demonstrates a non-root image, persistent storage, health checks, resource
 limits and reproducible operational exercises. Maintainer: Omprakash Kasaraneni.
 
-**Status:** application tests verified in the accompanying validation report.
-Container build, runtime and AWS integration still require execution.
+**Status:** Docker image build, container health, API smoke checks, data persistence and stop/start recovery verified locally.
+AWS deployment and Jenkins integration remain pending.
 
 ## Run locally
 
