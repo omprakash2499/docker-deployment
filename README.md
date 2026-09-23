@@ -46,7 +46,7 @@ Image dependencies are built separately from the runtime. The base tag and
 transitive dependency resolution can change: digest pinning and a fully hashed
 dependency lock are future improvements, not claims of this initial release.
 
-## Validation evidence
+## Deployment Verification
 
 See [validation](docs/validation.md) and the [deployment screenshots](https://github.com/omprakash2499/jenkins-cicd-deployment/tree/main/docs/screenshots).
 Local persistence and stop/start recovery were verified. AWS health and incident creation/listing were verified after deployment. Vulnerability scan results and rollback execution have not been verified.
