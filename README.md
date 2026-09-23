@@ -5,7 +5,7 @@ It demonstrates a non-root image, persistent storage, health checks, resource
 limits and reproducible operational exercises. Maintainer: Omprakash Kasaraneni.
 
 **Status:** Docker image build, container health, API smoke checks, data persistence and stop/start recovery verified locally.
-AWS deployment and Jenkins integration remain pending.
+Jenkins build #4 passed nine application tests, built and published the image to ECR, and deployed it successfully to EC2 through SSM. All twelve Terraform-managed AWS resources were subsequently destroyed.
 
 ## Run locally
 
@@ -46,16 +46,15 @@ Image dependencies are built separately from the runtime. The base tag and
 transitive dependency resolution can change: digest pinning and a fully hashed
 dependency lock are future improvements, not claims of this initial release.
 
-## Evidence to collect
+## Validation evidence
 
-Follow [operations](docs/operations.md). Record the commit, commands and actual
-output for health, persistence and recovery. Record image size and vulnerability
-scan results before describing this as tested. Do not add fake screenshots.
+See [validation](docs/validation.md) and the [deployment screenshots](https://github.com/omprakash2499/jenkins-cicd-deployment/tree/main/docs/screenshots).
+Local persistence and stop/start recovery were verified. AWS health and incident creation/listing were verified after deployment. Vulnerability scan results and rollback execution have not been verified.
 
 ## Connected projects
 
-`terraform-aws-labs` provisions ECR and a Docker host. `jenkins-cicd-labs` builds
-this repository at a chosen commit and releases a digest-pinned image through SSM.
+[Terraform AWS deployment](https://github.com/omprakash2499/terraform-aws-deployment) provisions ECR and a Docker host.
+[Jenkins CI/CD deployment](https://github.com/omprakash2499/jenkins-cicd-deployment) builds this repository at a chosen commit and releases a digest-pinned image through SSM.
 
 ## Stop
 
